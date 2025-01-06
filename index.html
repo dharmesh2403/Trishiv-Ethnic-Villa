@@ -1,0 +1,3197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Choli Catalog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      color: #333;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+    .product-info {
+      padding: 10px;
+    }
+    .product-info h3 {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    .product-info p {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #666;
+    }
+    .price {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .order-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .order-btn:hover {
+      background-color: #1da851;
+    }
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+    }
+    .popup-content .form-group {
+      margin-bottom: 10px;
+    }
+    .popup-content label {
+      display: block;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+    .popup-content input,
+    .popup-content select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .popup-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .popup-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .send-btn {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .description ul {
+        list-style-type: none; /* Removes default bullets */
+        padding: 0; /* Removes default padding */
+        margin: 0; /* Removes default margin */
+      }
+
+   .description li {
+        text-align: left; /* Aligns text to the left */
+        margin-bottom: 8px; /* Adds spacing between items */
+        line-height: 1.5; /* Improves readability with better line spacing */
+      }
+
+       .description li strong {
+            width: 150px; /* Set a consistent width for the label */
+            display: inline-block; /* Aligns labels uniformly */
+          }
+        /* Make each checkbox and label appear on a new line */
+      label {
+          display: block; /* Forces each label to take up a new line */
+          margin-bottom: 10px; /* Adds space between checkboxes */
+          font-size: 14px; /* Optional: Adjusts the font size */
+      }
+
+      /* Optional: Style the input checkboxes */
+      input[type="checkbox"] {
+          margin-right: 8px; /* Adds space between checkbox and label text */
+      }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Trishiv Ethnic Royal Choli Catalog</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="search-input" oninput="searchProducts()" placeholder="Search Products...">
+  </div>
+
+  <!-- Checkbox Filters -->
+  <label><input type="checkbox" id="kurti-filter" onclick="searchProducts()"> Kurti</label>
+  <label><input type="checkbox" id="gown-filter" onclick="searchProducts()"> Gown</label>
+  <label><input type="checkbox" id="choli-filter" onclick="searchProducts()"> Choli</label>
+  <label><input type="checkbox" id="heavy-choli-filter" onclick="searchProducts()"> Heavy Choli</label>
+  <label><input type="checkbox" id="combo-filter" onclick="searchProducts()"> Combo</label>
+
+
+  <div class="product-grid" id="product-grid">
+    <!-- BANDHANI Products 1-->
+    <div class="product">
+      <img src="images/BANDHANI/BANDHANI%20GREEN.jpeg" alt="BANDHANI GREEN">
+      <div class="product-info">
+        <h3>BANDHANI GREEN</h3>
+        <p>SKU: CHOLI BANDHANI GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANDHANI GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANDHANI Products 2-->
+
+    <div class="product">
+      <img src="images/BANDHANI/BANDHANI%20PINK.jpeg" alt="BANDHANI PINK">
+      <div class="product-info">
+        <h3>BANDHANI PINK</h3>
+        <p>SKU: CHOLI BANDHANI PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANDHANI PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANDHANI Products 3-->
+
+    <div class="product">
+      <img src="images/BANDHANI/BANDHANI%20RED.jpeg" alt="BANDHANI RED">
+      <div class="product-info">
+        <h3>BANDHANI RED</h3>
+        <p>SKU: CHOLI BANDHANI RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANDHANI RED', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANDHANI Products 4-->
+
+    <div class="product">
+      <img src="images/BANDHANI/BANDHANI%20YELLOW.jpeg" alt="BANDHANI YELLOW">
+      <div class="product-info">
+        <h3>BANDHANI YELLOW</h3>
+        <p>SKU: CHOLI BANDHANI YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANDHANI YELLOW', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- LITO Product 1 -->
+    <div class="product">
+      <img src="images/LITO/LITO%20FIROZI.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI LITO FIROZI</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('LITO FIROZI', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- LITO Product 2 -->
+    <div class="product">
+      <img src="images/LITO/LITO%20MAROON.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI LITO MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('LITO MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- LITO Product 3 -->
+    <div class="product">
+      <img src="images/LITO/LITO%20PINK.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI LITO PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('LITO PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- LITO Product 4 -->
+    <div class="product">
+      <img src="images/LITO/LITO%20YELLOW.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI LITO YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn"  onclick="openPopup('LITO YELLOW', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BINDI Product 1 -->
+    <div class="product">
+      <img src="images/BINDI/BINDI%20BLACK.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI BINDI BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn"  onclick="openPopup('BINDI BLACK', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- BINDI Product 2 -->
+    <div class="product">
+      <img src="images/BINDI/BINDI%20MAROON.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI BINDI MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BINDI MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- BINDI Product 3 -->
+    <div class="product">
+      <img src="images/BINDI/BINDI%20PURPLE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI BINDI PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BINDI PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+    <!-- BINDI Product 4 -->
+    <div class="product">
+      <img src="images/BINDI/BINDI%20WHITE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI BINDI WHITE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BINDI WHITE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 1 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20BLUE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 2 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20GREEN.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 3 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20NEVY%20BLUE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR NEVY BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR NEVY BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 4 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20PURPLE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 5 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20WHITE.jpeg" alt="Product 5">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR WHITE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR WHITE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- MIRROR Product 6 -->
+    <div class="product">
+      <img src="images/MIRROR/MIRROR%20YELLOW.jpeg" alt="Product 6">
+      <div class="product-info">
+        <p>SKU: CHOLI MIRROR YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MIRROR YELLOW', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANSARI Product 1 -->
+    <div class="product">
+      <img src="images/BANSARI/BANSARI%20ORANGE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI BANSARI ORANGE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANSARI ORANGE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANSARI Product 2 -->
+    <div class="product">
+      <img src="images/BANSARI/BANSARI%20PINK.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI BANSARI PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANSARI PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANSARI Product 3 -->
+    <div class="product">
+      <img src="images/BANSARI/BANSARI%20PURPLE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI BANSARI PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANSARI PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- BANSARI Product 4 -->
+    <div class="product">
+      <img src="images/BANSARI/BANSARI%20RED.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI BANSARI RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('BANSARI RED', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PARI Product 1 -->
+    <div class="product">
+      <img src="images/PARI/PARI%20MULTI.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: GOWN PARI MULTI</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PARI MULTI', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PARI Product 2 -->
+    <div class="product">
+      <img src="images/PARI/PARI%20PINK.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: GOWN PARI PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PARI PINK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PARI Product 3 -->
+    <div class="product">
+      <img src="images/PARI/PARI%20PURPLE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: GOWN PARI PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PARI PURPLE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PARI Product 4 -->
+    <div class="product">
+      <img src="images/PARI/PARI%20RED.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: GOWN PARI RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PARI RED', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PARI Product 5 -->
+    <div class="product">
+      <img src="images/PARI/PARI%20WHITE.jpeg" alt="Product 5">
+      <div class="product-info">
+        <p>SKU: GOWN PARI WHITE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PARI WHITE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHERY Product 1 -->
+    <div class="product">
+      <img src="images/CHERY/CHERY%20GREY.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI CHERY GREY</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHERY GREY', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CHERY Product 2 -->
+    <div class="product">
+      <img src="images/CHERY/CHERY%20MAROON.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI CHERY MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHERY MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CHERY Product 3 -->
+    <div class="product">
+      <img src="images/CHERY/CHERY%20PINK.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI CHERY PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHERY PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CHERY Product 4 -->
+    <div class="product">
+      <img src="images/CHERY/CHERY%20YELLOW.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI CHERY YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHERY YELLOW', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- DAAMAN Product 1 -->
+    <div class="product">
+      <img src="images/DAAMAN/DAAMAN%20BLUE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI DAAMAN BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DAAMAN BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- DAAMAN Product 2 -->
+    <div class="product">
+      <img src="images/DAAMAN/DAAMAN%20GREEN.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI DAAMAN GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DAAMAN GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- DAAMAN Product 3 -->
+    <div class="product">
+      <img src="images/DAAMAN/DAAMAN%20PINK.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI DAAMAN PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DAAMAN PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- DAAMAN Product 4 -->
+    <div class="product">
+      <img src="images/DAAMAN/DAAMAN%20RED.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI DAAMAN RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DAAMAN RED', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- GOLO Product 1 -->
+    <div class="product">
+      <img src="images/GOLO/GOLO%20BLACK.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI GOLO BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('GOLO BLACK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- GOLO Product 2 -->
+    <div class="product">
+      <img src="images/GOLO/GOLO%20BLUE.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI GOLO BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('GOLO BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- GOLO Product 3 -->
+    <div class="product">
+      <img src="images/GOLO/GOLO%20GREEN.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI GOLO GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('GOLO GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- GOLO Product 4 -->
+    <div class="product">
+      <img src="images/GOLO/GOLO%20WINE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI GOLO WINE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('GOLO WINE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- WELL Product 1 -->
+    <div class="product">
+      <img src="images/WELL/WELL%20GREEN.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI WELL GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('WELL GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- WELL Product 2 -->
+    <div class="product">
+      <img src="images/WELL/WELL%20MAROON.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI WELL MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('WELL MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- WELL Product 3 -->
+    <div class="product">
+      <img src="images/WELL/WELL%20ORANGE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI WELL ORANGE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('WELL ORANGE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- WELL Product 4 -->
+    <div class="product">
+      <img src="images/WELL/WELL%20RAMA.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI WELL RAMA</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('WELL RAMA', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- TILAK Product 1 -->
+    <div class="product">
+      <img src="images/TILAK/TILAK%20BLACK.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI TILAK BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('TILAK BLACK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- TILAK Product 2 -->
+    <div class="product">
+      <img src="images/TILAK/TILAK%20GREEN.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI TILAK GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('TILAK GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- TILAK Product 3 -->
+    <div class="product">
+      <img src="images/TILAK/TILAK%20ORANGE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI TILAK ORANGE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('TILAK ORANGE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- TILAK Product 4 -->
+    <div class="product">
+      <img src="images/TILAK/TILAK%20PURPLE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI TILAK PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('TILAK PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SUNRISE Product 1 -->
+    <div class="product">
+      <img src="images/SUNRISE/SUNRISE%20GREEN.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI SUNRISE GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SUNRISE GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SUNRISE Product 2 -->
+    <div class="product">
+      <img src="images/SUNRISE/SUNRISE%20MAROON.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI SUNRISE MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SUNRISE MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SUNRISE Product 3 -->
+    <div class="product">
+      <img src="images/SUNRISE/SUNRISE%20NEVY%20BLUE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI SUNRISE NEVY BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SUNRISE NEVY BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SUNRISE Product 4 -->
+    <div class="product">
+      <img src="images/SUNRISE/SUNRISE%20WINE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI SUNRISE WINE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SUNRISE WINE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- ROSE Product 1 -->
+    <div class="product">
+      <img src="images/ROSE/ROSE%20BLUE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI ROSE BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('ROSE BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- ROSE Product 2 -->
+    <div class="product">
+      <img src="images/ROSE/ROSE%20GREEN.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI ROSE GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('ROSE GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- ROSE Product 3 -->
+    <div class="product">
+      <img src="images/ROSE/ROSE%20RED.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI ROSE RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('ROSE RED', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- ROSE Product 4 -->
+    <div class="product">
+      <img src="images/ROSE/ROSE%20WINE.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI ROSE WINE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('ROSE WINE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PANETAR Product 1 -->
+    <div class="product">
+      <img src="images/PANETAR/PANETAR%20GREEN.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI PANETAR GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PANETAR GREEN', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PANETAR Product 2 -->
+    <div class="product">
+      <img src="images/PANETAR/PANETAR%20PINK.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI PANETAR PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PANETAR PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PANETAR Product 3 -->
+    <div class="product">
+      <img src="images/PANETAR/PANETAR%20PURPLE.jpeg" alt="Product 3">
+      <div class="product-info">
+        <p>SKU: CHOLI PANETAR PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PANETAR PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PANETAR Product 4 -->
+    <div class="product">
+      <img src="images/PANETAR/PANETAR%20YELLOW.jpeg" alt="Product 4">
+      <div class="product-info">
+        <p>SKU: CHOLI PANETAR YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PANETAR YELLOW', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PAN Product 1 -->
+    <div class="product">
+      <img src="images/PAN/PAN%20MAROON.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI PAN MAROON</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PAN MAROON', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- PAN Product 2 -->
+    <div class="product">
+      <img src="images/PAN/PAN%20PURPLE.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI PAN PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('PAN PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- RANI Product 1 -->
+    <div class="product">
+      <img src="images/RANI/RANI%20PURPLE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: GOWN RANI PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('RANI PURPLE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RANI Product 2 -->
+    <div class="product">
+      <img src="images/RANI/RANI%20RED.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: GOWN RANI RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('RANI RED', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>💃🏻PREMIUM DESIGNER READYMADE GOWN COLLECTIONS. 👜</h4>
+          <p>Designer Gown is luxury clothing considered to be high quality, made with Zari-Thread & Sequins Embroidery. This is made for desirable women who deserve it.</p>
+          <ul>
+            <li><strong>GOWN:</strong> 👇</li>
+            <li><strong>Fabric & Work:</strong> Faux Blooming with Embroidery Zari Sequins-work</li>
+            <li><strong>Size:</strong> XL (42''), XXL (44'')</li>
+            <li><strong>Length:</strong> 55 inch</li>
+            <li><strong>Flair:</strong> 3.5 MTR</li>
+            <li><strong>Lining:</strong> Cotton (Full Inner Top To Bottom)</li>
+            <li><strong>Sleeve:</strong> Short Sleeves Cut Work</li>
+            <li><strong>Neck Type:</strong> Square Neck</li>
+            <li><strong>Package Contain:</strong> Gown</li>
+            <li><strong>Color:</strong> 1</li>
+            <li><strong>Weight:</strong> 0.600 KG</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FLOWER Product 1 -->
+    <div class="product">
+      <img src="images/FLOWER/FLOWER%20NEVY%20BLUE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI FLOWER NEVY BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('FLOWER NEVY BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- FLOWER Product 2 -->
+    <div class="product">
+      <img src="images/FLOWER/FLOWER%20PINK.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI FLOWER PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('FLOWER PINK', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SHATKON Product 1 -->
+    <div class="product">
+      <img src="images/SHATKON/SHATKON%20NAVY%20BLUE.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI SHATKON NEVY BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SHATKON NEVY BLUE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SHATKON Product 2 -->
+    <div class="product">
+      <img src="images/SHATKON/SHATKON%20PURPLE.jpeg" alt="Product 2">
+      <div class="product-info">
+        <p>SKU: CHOLI SHATKON PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SHATKON PURPLE', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- ELEPHANT Product 1 -->
+    <div class="product">
+      <img src="images/ELEPHANT/ELEPHANT%20RED.jpeg" alt="Product 1">
+      <div class="product-info">
+        <p>SKU: CHOLI ELEPHANT RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('ELEPHANT RED', '₹999')">Order Now</button>
+      </div>
+    </div>
+
+    <!-- KURTI  Aashika 1-->
+    <div class="product">
+      <img src="images/KURTI/AASHIKA/White%201.jpg" alt="AASHIKA KURTI WHITE 1">
+      <img src="images/KURTI/AASHIKA/White%202.jpg"AASHIKA KURTI WHITE 2">
+      <div class="product-info">
+        <h3>AASHIKA KURTI WHITE</h3>
+        <p>SKU:AASHIKA KURTI WHITE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('AASHIKA KURTI WHITE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Catalogue: AASHIKA</h4>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi Print</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Print</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 46 inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KURTI Dolly Orange-->
+    <div class="product">
+      <img src="images/KURTI/DOLLY/ORANGE/Orange%201.jpg" alt="DOLLY KURTI ORANGE 1">
+      <img src="images/KURTI/DOLLY/ORANGE/Orange%202.jpg" alt="DOLLY KURTI ORANGE 2">
+      <div class="product-info">
+        <h3>DOLLY KURTI ORANGE </h3>
+        <p>SKU: DOLLY KURTI ORANGE </p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DOLLY KURTI ORANGE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> Dolly</li>
+            <li><strong>Color:</strong> ORANGE </li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Jacquard Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KURTI Dolly Pista-->
+    <div class="product">
+      <img src="images/KURTI/DOLLY/PISTA/Pista%201.jpg" alt="DOLLY KURTI PISTA 1">
+      <img src="images/KURTI/DOLLY/PISTA/Pista%202.jpg" alt="DOLLY KURTI PISTA 2">
+      <div class="product-info">
+        <h3>DOLLY KURTI PISTA </h3>
+        <p>SKU: DOLLY KURTI PISTA </p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('DOLLY KURTI PISTA', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> Dolly</li>
+            <li><strong>Color:</strong> PISTA </li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Jacquard Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOLDI YELLOW-->
+    <div class="product">
+      <img src="images/KURTI/GOLDI/YELLOW%201.jpg" alt="GOLDI KURTI YELLOW 1">
+      <img src="images/KURTI/GOLDI/YELLOW%202.jpg" alt="GOLDI KURTI YELLOW 2">
+      <div class="product-info">
+        <h3>GOLDI KURTI YELLOW</h3>
+        <p>SKU: GOLDI KURTI YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('GOLDI KURTI YELLOW', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥Catalogue: GOLDI🔥</h4>
+          <ul>
+            <li><strong>Top Fabric:</strong> Teby Silk</li>
+            <li><strong>Bottom Fabric:</strong> Viscose Blend</li>
+            <li><strong>Dupatta:</strong> Premium Organza Digital Print</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Digital Print</li>
+            <li><strong>Length:</strong> 46 inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HASINA KURTI CHIKU-->
+    <div class="product">
+      <img src="images/KURTI/HASINA/CHIKU/CHIKU%201.jpg" alt="HASINA KURTI CHIKU 1">
+      <img src="images/KURTI/HASINA/CHIKU/CHIKU%202.jpg" alt="HASINA KURTI CHIKU 2">
+      <div class="product-info">
+        <h3>HASINA KURTI CHIKU </h3>
+        <p>SKU: HASINA KURTI CHIKU </p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('HASINA KURTI CHIKU', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> HASINA</li>
+            <li><strong>Color:</strong> Chiku</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Jacquard Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HASINA KURTI COMBO-->
+    <div class="product">
+      <img src="images/KURTI/HASINA/COMBO/COMBO%201.jpg" alt="HASINA KURTI COMBO 1">
+      <div class="product-info">
+        <h3>HASINA KURTI CHIKU & LEMON COMBO</h3>
+        <p>SKU: HASINA KURTI CHIKU & LEMON COMBO </p>
+        <p class="price">₹1899</p>
+        <button class="order-btn" onclick="openPopup('HASINA KURTI CHIKU & LEMON COMBO', '₹1899')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> HASINA</li>
+            <li><strong>Color:</strong> CHIKU & LEMON COMBO</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Jacquard Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HASINA KURTI CHIKU-->
+    <div class="product">
+      <img src="images/KURTI/HASINA/LEMON/LEMON%201.jpg" alt="HASINA KURTI LEMON 1">
+      <img src="images/KURTI/HASINA/LEMON/LEMON%202.jpg" alt="HASINA KURTI LEMON 2">
+      <div class="product-info">
+        <h3>HASINA KURTI LEMON </h3>
+        <p>SKU: HASINA KURTI LEMON </p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('HASINA KURTI LEMON', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> HASINA</li>
+            <li><strong>Color:</strong> LEMON</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Jacquard Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- JINIVA KURTI MAROON-->
+    <div class="product">
+      <img src="images/KURTI/JINIVA/JINIVA%201.jpg" alt="JINIVA KURTI MAROON 1">
+      <img src="images/KURTI/JINIVA/JINIVA%202.jpg" alt="JINIVA KURTI MAROON 2">
+      <div class="product-info">
+        <h3>JINIVA KURTI MAROON </h3>
+        <p>SKU: JINIVA KURTI MAROON </p>
+        <p class="price">₹1199</p>
+        <button class="order-btn" onclick="openPopup('JINIVA KURTI MAROON', '₹1199')">Order Now</button>
+        <div class="description">
+          <h4>🔥Catalogue: JINIVA🔥</h4>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi Print</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Print with Embroidery Work</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 46 Inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KAJRI KURTI YELLOW-->
+    <div class="product">
+      <img src="images/KURTI/KAJRI/KAJRI%201.jpg" alt="KAJRI KURTI YELLOW 1">
+      <img src="images/KURTI/KAJRI/KAJRI%202.jpg" alt="KAJRI KURTI YELLOW 2">
+      <div class="product-info">
+        <h3>KAJRI KURTI YELLOW MUSTARD</h3>
+        <p>SKU: KAJRI/MITALI KURTI YELLOW MUSTARD</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('KAJRI/MITALI KURTI YELLOW MUSTARD', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women Hand Work Neutral Crepe Straight Kurta Pant Dupatta Set</p>
+          <ul>
+            <li><strong>SKU:</strong> MITALI</li>
+            <li><strong>Color:</strong> MUSTARD</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Neutral Crepe</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MALVIKA KURTI Petrol blue-->
+    <div class="product">
+      <img src="images/KURTI/MALVIKA/MALVIKA%201.jpg" alt="MALVIKA KURTI Petrol blue 1">
+      <img src="images/KURTI/MALVIKA/MALVIKA%202.jpg" alt="MALVIKA KURTI Petrol blue 2">
+      <div class="product-info">
+        <h3>MALVIKA KURTI PETROL BLUE</h3>
+        <p>SKU: MALVIKA KURTI PETROL BLUE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('MALVIKA KURTI PETROL BLUE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women's Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> MALVIKA</li>
+            <li><strong>Color:</strong> Petrol Blue</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details:</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Chanderi Print</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MANORAMA KURTI WHITE-->
+    <div class="product">
+      <img src="images/KURTI/MANORAMA/MANORAMA%201.jpg" alt="MANORAMA KURTI WHITE 1">
+      <img src="images/KURTI/MANORAMA/MANORAMA%202.jpg" alt="MANORAMA KURTI WHITE 2">
+      <div class="product-info">
+        <h3> MANORAMA KURTI WHITE</h3>
+        <p>SKU: MANORAMA KURTI WHITE</p>
+        <p class="price">₹1199</p>
+        <button class="order-btn" onclick="openPopup('MANORAMA KURTI WHITE', '₹1199')">Order Now</button>
+        <div class="description">
+          <h4>CATALOGUE- MANORAMA</h4>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi Print with Embroidery Work</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Print Embroidery Work</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 46 Inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MILLY KURTI WHITE-->
+    <div class="product">
+      <img src="images/KURTI/MILLY/MILLY%201.png" alt="MILLY KURTI WHITE 1">
+      <img src="images/KURTI/MILLY/MILLY%202.png" alt="MILLY KURTI WHITE 2">
+      <img src="images/KURTI/MILLY/MILLY%203.png" alt="MILLY KURTI WHITE 3">
+      <div class="product-info">
+        <h3> MILLY KURTI WHITE</h3>
+        <p>SKU: MILLY KURTI WHITE</p>
+        <p class="price">₹1299</p>
+        <button class="order-btn" onclick="openPopup('MILLY KURTI WHITE', '₹1299')">Order Now</button>
+        <div class="description">
+          <h4>CATALOGUE- MILLY</h4>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi Print</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Print</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 46 inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIYA KURTI WHITE-->
+    <div class="product">
+      <img src="images/KURTI/PRIYA/PRIYA%201.jpg" alt="PRIYA KURTI WHITE 1">
+      <img src="images/KURTI/PRIYA/PRIYA%202.jpg" alt="PRIYA KURTI WHITE 2">
+      <div class="product-info">
+        <h3> PRIYA KURTI WHITE</h3>
+        <p>SKU: PRIYA KURTI WHITE</p>
+        <p class="price">₹1050</p>
+        <button class="order-btn" onclick="openPopup('PRIYA KURTI WHITE', '₹1050')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p>Women"s Embroidery Straight Kurta Pant With Dupatta</p>
+          <ul>
+            <li><strong>D Name:</strong> Priya</li>
+            <li><strong>Color:</strong> Office White</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Product Details :</strong></p>
+          <ul>
+            <li><strong>Kurti:</strong> Stitched</li>
+            <li><strong>Kurti Material:</strong> Chanderi Viscose With Inner</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Bottom:</strong> Stitched</li>
+            <li><strong>Bottom Material:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Stitched</li>
+            <li><strong>Dupatta Material:</strong> Tebby Silk with Embroidery Work</li>
+            <li><strong>Dupatta Length:</strong> 2.20 m</li>
+          </ul>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAAGA KURTI PISTA-->
+    <div class="product">
+      <img src="images/KURTI/RAAGA/PISTA/RAAGA%20PISTA%201.jpg" alt="RAAGA KURTI PISTA 1">
+      <img src="images/KURTI/RAAGA/PISTA/RAAGA%20PISTA%202.jpg" alt="RAAGA KURTI PISTA 2">
+      <div class="product-info">
+        <h3> RAAGA KURTI PISTA</h3>
+        <p>SKU: RAAGA KURTI PISTA</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('RAAGA KURTI PISTA', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> RAAGA</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Maslin</li>
+            <li><strong>Bottom Fabric:</strong> Viscose Gadhwal</li>
+            <li><strong>Dupatta:</strong> Premium Organza (Taby)</li>
+            <li><strong>Top Work:</strong> Embroidery and Print</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Embroidery</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 45 inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAAGA KURTI RAMA-->
+    <div class="product">
+      <img src="images/KURTI/RAAGA/RAMA/RAAGA%20RAMA%201.jpg" alt="RAAGA KURTI RAMA 1">
+      <img src="images/KURTI/RAAGA/RAMA/RAAGA%20RAMA%202.jpg" alt="RAAGA KURTI RAMA 2">
+      <div class="product-info">
+        <h3> RAAGA KURTI RAMA</h3>
+        <p>SKU: RAAGA KURTI RAMA</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('RAAGA KURTI RAMA', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> RAAGA</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Maslin</li>
+            <li><strong>Bottom Fabric:</strong> Viscose Gadhwal</li>
+            <li><strong>Dupatta:</strong> Premium Organza (Taby)</li>
+            <li><strong>Top Work:</strong> Embroidery and Print</li>
+            <li><strong>Bottom Work:</strong> Plain</li>
+            <li><strong>Dupatta Work:</strong> Embroidery</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> 45 inch</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAHELI KURTI YELLOW-->
+    <div class="product">
+      <img src="images/KURTI/SAHELI/1.png" alt="SAHELI KURTI YELLOW 1">
+      <img src="images/KURTI/SAHELI/2.png" alt="SAHELI KURTI YELLOW 2">
+      <div class="product-info">
+        <h3> SAHELI KURTI YELLOW</h3>
+        <p>SKU: SAHELI KURTI YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SAHELI KURTI YELLOW', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> SAHELI</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Dupatta Work:</strong> Shiburi Print</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> Full Length</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SHIVALI KURTI WHITE-->
+    <div class="product">
+      <img src="images/KURTI/SHIVALI/1.png" alt="SHIVALI KURTI WHITE 1">
+      <img src="images/KURTI/SHIVALI/2.png" alt="SHIVALI KURTI WHITE 2">
+      <div class="product-info">
+        <h3> SHIVALI KURTI WHITE</h3>
+        <p>SKU: SHIVALI KURTI WHITE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('SHIVALI KURTI WHITE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> SHIVALI</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Dupatta Work:</strong> Shiburi Print</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> Full Length</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SHRIVALLI KURTI RED-->
+    <div class="product">
+      <img src="images/KURTI/SHRIVALLI/1.png" alt="SHRIVALLI KURTI RED 1">
+      <img src="images/KURTI/SHRIVALLI/2.png" alt="SHRIVALLI KURTI RED 2">
+      <div class="product-info">
+        <h3> SHRIVALLI KURTI RED</h3>
+        <p>SKU: SHRIVALLI KURTI RED</p>
+        <p class="price">₹1050</p>
+        <button class="order-btn" onclick="openPopup('SHRIVALLI KURTI RED', '₹1050')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> SHRIVALLI KURTI RED</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Dupatta Work:</strong> CHINON EMBOIDERY  BORDER WORK</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> Full Length</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SONAKSHI KURTI RED-->
+    <div class="product">
+      <img src="images/KURTI/SONAKSHI/1.png" alt="SONAKSHI KURTI RED 1">
+      <img src="images/KURTI/SONAKSHI/2.png" alt="SONAKSHI KURTI RED 2">
+      <div class="product-info">
+        <h3> SONAKSHI KURTI RED</h3>
+        <p>SKU: SONAKSHI KURTI RED</p>
+        <p class="price">₹1050</p>
+        <button class="order-btn" onclick="openPopup('SONAKSHI KURTI RED', '₹1050')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> SONAKSHI KURTI RED</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Bottom Fabric:</strong> Chanderi Viscose</li>
+            <li><strong>Dupatta:</strong> Chanderi</li>
+            <li><strong>Top Work:</strong> Embroidery</li>
+            <li><strong>Dupatta Work:</strong> CHINON EMBOIDERY  BORDER WORK</li>
+            <li><strong>Work:</strong> Embroidery</li>
+            <li><strong>Length:</strong> Full Length</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TULSI KURTI RED-->
+    <div class="product">
+      <img src="images/KURTI/TULSI/1.png" alt="TULSI KURTI WHITE RED 1">
+      <img src="images/KURTI/TULSI/2.png" alt="TULSI KURTI WHITE RED 2">
+      <div class="product-info">
+        <h3> TULSI KURTI WHITE RED</h3>
+        <p>SKU: TULSI KURTI WHITE RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('TULSI KURTI WHITE RED', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>🔥New Catalog Launched🔥</h4>
+          <p><strong>Catalogue:</strong> TULSI KURTI WHITE RED</p>
+          <ul>
+            <li><strong>Top Fabric:</strong> PURE MUSLINE</li>
+            <li><strong>Bottom Fabric:</strong> PURE MUSLINE</li>
+            <li><strong>Dupatta:</strong> TABY SILK PRINTED</li>
+            <li><strong>Top Work:</strong> PRINT</li>
+            <li><strong>Dupatta Work:</strong> PRINT</li>
+            <li><strong>Work:</strong> PRINTED</li>
+            <li><strong>Length:</strong> 46 INCH</li>
+            <li><strong>Size:</strong> S, M, L, XL, XXL</li>
+          </ul>
+          <p><strong>Exchange:</strong> (Defective and damaged piece return policy available) <br> (Unboxing video compulsory)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHOLI 1-->
+    <div class="product">
+      <img src="images/CHOLI/COW%20FIROZI.jpeg" alt="COW FIROZI">
+      <div class="product-info">
+        <h3> COW FIROZI</h3>
+        <p>SKU: CHOLI COW FIROZI</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI COW FIROZI', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- CHOLI 2-->
+    <div class="product">
+      <img src="images/CHOLI/COW%20PINK.jpeg" alt="COW PINK">
+      <div class="product-info">
+        <h3> COW PINK</h3>
+        <p>SKU: CHOLI COW PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI COW PINK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- CHOLI 3-->
+    <div class="product">
+      <img src="images/CHOLI/COW%20PURPLE.jpeg" alt="COW PURPLE">
+      <div class="product-info">
+        <h3> COW PURPLE</h3>
+        <p>SKU: CHOLI COW PURPLE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI COW PURPLE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- CHOLI 4-->
+    <div class="product">
+      <img src="images/CHOLI/COW%20YELLOW.jpeg" alt="COW YELLOW">
+      <div class="product-info">
+        <h3> COW YELLOW</h3>
+        <p>SKU: CHOLI COW YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI COW YELLOW', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- CHOLI 5-->
+    <div class="product">
+      <img src="images/CHOLI/FLOWER%20RED.jpeg" alt="FLOWER RED">
+      <div class="product-info">
+        <h3> FLOWER RED</h3>
+        <p>SKU: CHOLI FLOWER RED</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI FLOWER RED', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- CHOLI 6-->
+    <div class="product">
+      <img src="images/CHOLI/FLOWER%20WINE.jpg" alt="FLOWER WINE">
+      <div class="product-info">
+        <h3> FLOWER WINE</h3>
+        <p>SKU: CHOLI FLOWER WINE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI FLOWER WINE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- CHOLI 7-->
+    <div class="product">
+      <img src="images/CHOLI/GULAB%20PINK.jpeg" alt="GULAB PINK">
+      <div class="product-info">
+        <h3> GULAB PINK</h3>
+        <p>SKU: CHOLI GULAB PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI GULAB PINK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- CHOLI 8-->
+    <div class="product">
+      <img src="images/CHOLI/GULAB%20YELLOW.jpeg" alt="GULAB YELLOW">
+      <div class="product-info">
+        <h3> GULAB YELLOW</h3>
+        <p>SKU: CHOLI GULAB YELLOW</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI GULAB YELLOW', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- CHOLI 9-->
+    <div class="product">
+      <img src="images/CHOLI/PAN%20BLACK.jpeg" alt="PAN BLACK">
+      <div class="product-info">
+        <h3> PAN BLACK</h3>
+        <p>SKU: CHOLI PAN BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI PAN BLACK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- CHOLI 10-->
+    <div class="product">
+      <img src="images/CHOLI/PAN%20GREEN.jpeg" alt="PAN GREEN">
+      <div class="product-info">
+        <h3> PAN GREEN</h3>
+        <p>SKU: CHOLI PAN GREEN</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('CHOLI PAN GREEN', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>😍 SALE..SALE..SALE 😍</h4>
+          <p>🌷Lehenga Choli🌷<br>
+            An exquisite Dola Silk Lehenga Set with perfect floral patola print design to make you feel utterly beautiful🌙</p>
+          <p><strong>DISCOUNT Rate:</strong><br>
+            <strong>ONLINE PAYMENT:</strong> ₹999/-<br>
+            <strong>CASH ON DELIVERY:</strong> ₹1099/-</p>
+          <ul>
+            <li><strong>Lehenga (Stitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Floral and Patola Print with Foil Work</li>
+              <li><strong>Waist:</strong> Supported up to 42</li>
+              <li><strong>Stitching:</strong> Stitched with Canvas</li>
+              <li><strong>Length:</strong> 42</li>
+              <li><strong>Flair:</strong> 3.0 Meter</li>
+              <li><strong>Inner:</strong> Micro Cotton</li>
+            </ul>
+            <li><strong>Blouse (Unstitched):</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Patola Print with Foil Work</li>
+              <li><strong>Length:</strong> 0.80 Meter</li>
+            </ul>
+            <li><strong>Dupatta:</strong></li>
+            <ul>
+              <li><strong>Fabric:</strong> Dola Silk</li>
+              <li><strong>Work:</strong> Printed with Foil Work</li>
+              <li><strong>Length:</strong> 2.5 Meter</li>
+            </ul>
+          </ul>
+          <p><strong>Package Contain:</strong> Lehenga, Blouse, Dupatta</p>
+          <p><strong>Weight:</strong> 1.250 kg ESTIMATED</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+          <p>Save my number</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <!-- CHOLI  1002 MAROON-->
+    <div class="product">
+      <img src="images/CHOLI/1002-MAROON.jpg" alt="1002-MAROON">
+      <div class="product-info">
+        <h3>1002-MAROON</h3>
+        <p>SKU: CHOLI 1002-MAROON</p>
+        <p class="price">₹1299</p>
+        <button class="order-btn" onclick="openPopup('CHOLI 1002-MAROON', '₹1299')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga Choli Details</h4>
+          <ul>
+            <li><strong>Lehenga Fabric:</strong> Georgette</li>
+            <li><strong>Choli Fabric:</strong> Georgette</li>
+            <li><strong>Dupatta Fabric:</strong> Georgette</li>
+            <li><strong>Lehenga Flair:</strong> 3.20 Mtrs</li>
+            <li><strong>Inner:</strong> Raw Micro Silk</li>
+            <li><strong>Lehenga Choli Work:</strong> Sequence 5mm, Multi Needle Work, Embroidery Work, Zari Work</li>
+            <li><strong>Lehenga Choli Stitching Type:</strong> Lehenga Semi Stitched, Blouse Unstitched</li>
+            <li><strong>Dupatta Length:</strong> 2.20 Mtrs</li>
+          </ul>
+          <p><strong>PRICE:</strong> ₹1299/-</p>
+          <p><strong>CASH ON DELIVERY:</strong> + ₹100/-</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHOLI  1002 PURPLE-->
+    <div class="product">
+      <img src="images/CHOLI/1002-PURPLE.jpg" alt="1002-PURPLE">
+      <div class="product-info">
+        <h3>1002-PURPLE</h3>
+        <p>SKU: CHOLI 1002-PURPLE</p>
+        <p class="price">₹1299</p>
+        <button class="order-btn" onclick="openPopup('CHOLI 1002-PURPLE', '₹1299')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga Choli Details</h4>
+          <ul>
+            <li><strong>Lehenga Fabric:</strong> Georgette</li>
+            <li><strong>Choli Fabric:</strong> Georgette</li>
+            <li><strong>Dupatta Fabric:</strong> Georgette</li>
+            <li><strong>Lehenga Flair:</strong> 3.20 Mtrs</li>
+            <li><strong>Inner:</strong> Raw Micro Silk</li>
+            <li><strong>Lehenga Choli Work:</strong> Sequence 5mm, Multi Needle Work, Embroidery Work, Zari Work</li>
+            <li><strong>Lehenga Choli Stitching Type:</strong> Lehenga Semi Stitched, Blouse Unstitched</li>
+            <li><strong>Dupatta Length:</strong> 2.20 Mtrs</li>
+          </ul>
+          <p><strong>PRICE:</strong> ₹1299/-</p>
+          <p><strong>CASH ON DELIVERY:</strong> + ₹100/-</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CHOLI  1002 RAMA-->
+    <div class="product">
+      <img src="images/CHOLI/1002-RAMA.jpg" alt="1002-RAMA">
+      <div class="product-info">
+        <h3>1002-PURPLE</h3>
+        <p>SKU: CHOLI 1002-RAMA</p>
+        <p class="price">₹1299</p>
+        <button class="order-btn" onclick="openPopup('CHOLI 1002-RAMA', '₹1299')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga Choli Details</h4>
+          <ul>
+            <li><strong>Lehenga Fabric:</strong> Georgette</li>
+            <li><strong>Choli Fabric:</strong> Georgette</li>
+            <li><strong>Dupatta Fabric:</strong> Georgette</li>
+            <li><strong>Lehenga Flair:</strong> 3.20 Mtrs</li>
+            <li><strong>Inner:</strong> Raw Micro Silk</li>
+            <li><strong>Lehenga Choli Work:</strong> Sequence 5mm, Multi Needle Work, Embroidery Work, Zari Work</li>
+            <li><strong>Lehenga Choli Stitching Type:</strong> Lehenga Semi Stitched, Blouse Unstitched</li>
+            <li><strong>Dupatta Length:</strong> 2.20 Mtrs</li>
+          </ul>
+          <p><strong>PRICE:</strong> ₹1299/-</p>
+          <p><strong>CASH ON DELIVERY:</strong> + ₹100/-</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CHOLI  1002 RAMA-->
+    <div class="product">
+      <img src="images/CHOLI/1002-Rotali%20Purple.jpg" alt="1002-Rotali Purple">
+      <div class="product-info">
+        <h3>1002-Rotali Purple</h3>
+        <p>SKU: CHOLI 1002-Rotali Purple</p>
+        <p class="price">₹1299</p>
+        <button class="order-btn" onclick="openPopup('CHOLI 1002-Rotali Purple', '₹1299')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga Choli Details</h4>
+          <ul>
+            <li><strong>Lehenga Fabric:</strong> Georgette</li>
+            <li><strong>Choli Fabric:</strong> Georgette</li>
+            <li><strong>Dupatta Fabric:</strong> Georgette</li>
+            <li><strong>Lehenga Flair:</strong> 3.20 Mtrs</li>
+            <li><strong>Inner:</strong> Raw Micro Silk</li>
+            <li><strong>Lehenga Choli Work:</strong> Sequence 5mm, Multi Needle Work, Embroidery Work, Zari Work</li>
+            <li><strong>Lehenga Choli Stitching Type:</strong> Lehenga Semi Stitched, Blouse Unstitched</li>
+            <li><strong>Dupatta Length:</strong> 2.20 Mtrs</li>
+          </ul>
+          <p><strong>PRICE:</strong> ₹1299/-</p>
+          <p><strong>CASH ON DELIVERY:</strong> + ₹100/-</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!--  HAVY CHOLI MLS 01-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2001.jpeg" alt="MLS 01">
+      <div class="product-info">
+        <h3>MLS 01</h3>
+        <p>SKU: HEAVY CHOLI MLS 01</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 01', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 02-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2002.jpeg" alt="MLS 02">
+      <div class="product-info">
+        <h3>MLS 02</h3>
+        <p>SKU: HEAVY CHOLI MLS 02</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 02', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!--  HAVY CHOLI MLS 03-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2003.jpeg" alt="MLS 03">
+      <div class="product-info">
+        <h3>MLS 03</h3>
+        <p>SKU: HEAVY CHOLI MLS 03</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 03', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 04-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2004.jpeg" alt="MLS 04">
+      <div class="product-info">
+        <h3>MLS 04</h3>
+        <p>SKU: HEAVY CHOLI MLS 04</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 04', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 05-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2005.jpeg" alt="MLS 05">
+      <div class="product-info">
+        <h3>MLS 05</h3>
+        <p>SKU: HEAVY CHOLI MLS 05</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 05', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 06-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2006.jpeg" alt="MLS 06">
+      <div class="product-info">
+        <h3>MLS 06</h3>
+        <p>SKU: HEAVY CHOLI MLS 06</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 06', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 07-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2007.jpeg" alt="MLS 07">
+      <div class="product-info">
+        <h3>MLS 07</h3>
+        <p>SKU: HEAVY CHOLI MLS 07</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 07', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 08-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2008.jpeg" alt="MLS 08">
+      <div class="product-info">
+        <h3>MLS 08</h3>
+        <p>SKU: HEAVY CHOLI MLS 08</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 08', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 09-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2009.jpeg" alt="MLS 09">
+      <div class="product-info">
+        <h3>MLS 09</h3>
+        <p>SKU: HEAVY CHOLI MLS 09</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 09', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 10-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2010.jpeg" alt="MLS 10">
+      <div class="product-info">
+        <h3>MLS 10</h3>
+        <p>SKU: HEAVY CHOLI MLS 10</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 10', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 11-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2011.jpeg" alt="MLS 11">
+      <div class="product-info">
+        <h3>MLS 11</h3>
+        <p>SKU: HEAVY CHOLI MLS 11</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 11', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 12-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2012.jpeg" alt="MLS 12">
+      <div class="product-info">
+        <h3>MLS 12</h3>
+        <p>SKU: HEAVY CHOLI MLS 12</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 12', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 13-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2013.jpeg" alt="MLS 13">
+      <div class="product-info">
+        <h3>MLS 13</h3>
+        <p>SKU: HEAVY CHOLI MLS 13</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 13', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 14-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2014.jpeg" alt="MLS 14">
+      <div class="product-info">
+        <h3>MLS 14</h3>
+        <p>SKU: HEAVY CHOLI MLS 14</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 14', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 15-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2015.jpeg" alt="MLS 15">
+      <div class="product-info">
+        <h3>MLS 15</h3>
+        <p>SKU: HEAVY CHOLI MLS 15</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 15', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 16-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2016.jpeg" alt="MLS 16">
+      <div class="product-info">
+        <h3>MLS 16</h3>
+        <p>SKU: HEAVY CHOLI MLS 16</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 16', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  HAVY CHOLI MLS 17-->
+    <div class="product">
+      <img src="images/HAVY%20CHOLI/MLS%2017.jpeg" alt="MLS 17">
+      <div class="product-info">
+        <h3>MLS 17</h3>
+        <p>SKU: HEAVY CHOLI MLS 17</p>
+        <p class="price">₹2899</p>
+        <button class="order-btn" onclick="openPopup('HAVY CHOLI MLS 17', '₹2899')">Order Now</button>
+        <div class="description">
+          <h4>Lehenga</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Flair:</strong> 03.50 Mtr</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> Free Size Up to 42 Inches (Bust)</li>
+            <li><strong>Stitch Type:</strong> Semi Stitched (Standard Cancan & Canvas Attached)</li>
+          </ul>
+          <h4>Blouse</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 1 Meter (Bust Size Up to 46 Inches)</li>
+            <li><strong>Stitch Type:</strong> Unstitched</li>
+          </ul>
+          <h4>Dupatta</h4>
+          <ul>
+            <li><strong>Fabric:</strong> Fox Georgette</li>
+            <li><strong>Work:</strong> Thread & Sequins Embroidery Work</li>
+            <li><strong>Size:</strong> 2.25 Meter</li>
+          </ul>
+          <p><strong>Price:</strong> ₹2799</p>
+          <p><strong>Weight:</strong> 1.5 Kgs per Pc</p>
+          <p><strong>Exchange:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO MAROON-PINK-->
+    <div class="product">
+      <img src="images/COMBO/MEROON-PINK.jpeg" alt="COMBO MAROON-PINK">
+      <div class="product-info">
+        <h3>COMBO MAROON-PINK</h3>
+        <p>SKU: COMBO MAROON-PINK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO MAROON-PINK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO MOREPEACH-BLACK-->
+    <div class="product">
+      <img src="images/COMBO/MOREPEACH-BLACK.jpeg" alt="COMBO MOREPEACH-BLACK">
+      <div class="product-info">
+        <h3>COMBO MOREPEACH-BLACK</h3>
+        <p>SKU: COMBO MOREPEACH-BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO MOREPEACH-BLACK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO PINK-BLACK-->
+    <div class="product">
+      <img src="images/COMBO/PINK%20BLACK.jpeg" alt="COMBO PINK-BLACK">
+      <div class="product-info">
+        <h3>COMBO PINK-BLACK</h3>
+        <p>SKU: COMBO PINK-BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO PINK-BLACK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO PURPULE-MOREPEACH-->
+    <div class="product">
+      <img src="images/COMBO/PURPULE-MOREPEACH.jpeg" alt="COMBO PURPULE-MOREPEACH">
+      <div class="product-info">
+        <h3>COMBO PURPULE-MOREPEACH</h3>
+        <p>SKU: COMBO PURPULE-MOREPEACH</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO PURPULE-MOREPEACH', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO RED MOREPEACH-->
+    <div class="product">
+      <img src="images/COMBO/RED%20MOREPEACH.jpeg" alt="COMBO RED MOREPEACH">
+      <div class="product-info">
+        <h3>COMBO RED MOREPEACH</h3>
+        <p>SKU: COMBO RED MOREPEACH</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO RED MOREPEACH', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO WHITE-BLACK-->
+    <div class="product">
+      <img src="images/COMBO/WHITE-BLACK.jpeg" alt="COMBO WHITE-BLACK">
+      <div class="product-info">
+        <h3>COMBO WHITE-BLACK</h3>
+        <p>SKU: COMBO WHITE-BLACK</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO WHITE-BLACK', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+    <!--  COMBO WHITE-WINE-->
+    <div class="product">
+      <img src="images/COMBO/WHITE-WINE.jpeg" alt="COMBO WHITE-WINE">
+      <div class="product-info">
+        <h3>COMBO WHITE-WINE</h3>
+        <p>SKU: COMBO WHITE-WINE</p>
+        <p class="price">₹999</p>
+        <button class="order-btn" onclick="openPopup('COMBO WHITE-WINE', '₹999')">Order Now</button>
+        <div class="description">
+          <h4>Lehnga with Blouse - ₹999/- ONLY</h4>
+          <p>🔥 **Highly Demanded** 🔥</p>
+          <p>🔊 **Be Aware of Replicas**</p>
+          <p>🔊 **Lowest Rate with Best Quality**</p>
+          <p><strong>Pure Cotton Rayon Chaniya</strong></p>
+          <ul>
+            <li><strong>Waist:</strong> 42 Inches</li>
+            <li><strong>Length:</strong> 💃💃💃</li>
+          </ul>
+          <p><strong>Lehnga Features:</strong></p>
+          <ul>
+            <li><strong>Flare:</strong> 3.5 to 4 meters</li>
+            <li><strong>Lining:</strong> Best finishing</li>
+            <li><strong>Includes:</strong> String, Zip, Lace 💕</li>
+          </ul>
+          <p><strong>Blouse:</strong> Same Lehnga blouse design, 1 meter blouse</p>
+          <p><strong>Package:</strong> Lehnga + Blouse</p>
+          <p><strong>Exchange Policy:</strong> Defective and damaged piece return policy available (Unboxing video compulsory)</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>Order Details</h2>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="address">Full Address</label>
+      <input type="text" id="address" placeholder="Enter your address">
+    </div>
+    <div class="form-group">
+      <label for="landmark">Landmark</label>
+      <input type="text" id="landmark" placeholder="Enter landmark">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" placeholder="Enter city">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" id="state" placeholder="Enter state">
+    </div>
+    <div class="form-group">
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" placeholder="Enter pincode">
+    </div>
+    <div class="form-group">
+      <label for="mobileNum">Mobile Number</label>
+      <input type="text" id="mobileNum" placeholder="Enter mobile number">
+    </div>
+    <div class="form-group">
+      <label for="mobileNum">Second Mobile Number</label>
+      <input type="text" id="mobileNum1" placeholder="Enter mobile number">
+    </div>
+    <div class="form-group">
+      <label for="delivery">Order Delivery</label>
+      <select id="delivery">
+        <option value="1">Cash On Delivery (+₹100 Extra)</option>
+        <option value="2">Online Payment</option>
+      </select>
+    </div>
+    <div class="popup-buttons">
+      <button class="close-btn" onclick="closePopup()">Close</button>
+      <button class="send-btn" id="send-whatsapp">Send to WhatsApp</button>
+    </div>
+  </div>
+</div>
+<script>
+  function searchProducts() {
+    const input = document.getElementById("search-input").value.toLowerCase();
+    const products = document.getElementsByClassName("product");
+
+    // Get the state of each checkbox filter
+    const isKurtiChecked = document.getElementById("kurti-filter").checked;
+    const isGownChecked = document.getElementById("gown-filter").checked;
+    const isCholiChecked = document.getElementById("choli-filter").checked;
+    const isHeavyCholiChecked = document.getElementById("heavy-choli-filter").checked;
+    const isComboChecked = document.getElementById("combo-filter").checked;
+
+    for (let i = 0; i < products.length; i++) {
+        const productText = products[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+
+        // Check if the product matches the search input
+        const matchesSearch = productText.includes(input);
+
+        // Check if the product matches the selected category filters
+        const matchesCategory =
+            (isKurtiChecked && productText.includes("kurti")) ||
+            (isGownChecked && productText.includes("gown")) ||
+            (isCholiChecked && productText.includes("choli")) ||
+            (isHeavyCholiChecked && productText.includes("heavy choli")) ||
+            (isComboChecked && productText.includes("combo"));
+
+        // Display product if it matches the search input and the selected filters
+        if (matchesSearch && (!isKurtiChecked && !isGownChecked && !isCholiChecked && !isHeavyCholiChecked && !isComboChecked || matchesCategory)) {
+            products[i].style.display = "block";
+        } else {
+            products[i].style.display = "none";
+        }
+    }
+}
+
+
+
+    function openPopup(sku, price) {
+      document.getElementById("popup").style.display = "flex";
+      document.getElementById("send-whatsapp").onclick = function () {
+        sendWhatsAppMessage(sku, price);
+      };
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+  function sendWhatsAppMessage(sku, price) {
+      const name = document.getElementById("name").value || "N/A";
+      const address = document.getElementById("address").value || "N/A";
+      const landmark = document.getElementById("landmark").value || "N/A";
+      const city = document.getElementById("city").value || "N/A";
+      const state = document.getElementById("state").value || "N/A";
+      const pincode = document.getElementById("pincode").value || "N/A";
+      const mobileNum = document.getElementById("mobileNum").value || "N/A";
+      const mobileNum1 = document.getElementById("mobileNum1").value || "N/A";
+      const delivery = document.getElementById("delivery").value;
+
+      const message = `Hi, I am interested in SKU: ${encodeURIComponent(sku)}. It costs ${encodeURIComponent(price)}.\n\nDetails:\n          *Name*: ${encodeURIComponent(name)}\n          *Full Address*: ${encodeURIComponent(address)}\n          *Landmark*: ${encodeURIComponent(landmark)}\n          *City*: ${encodeURIComponent(city)}\n          *State*: ${encodeURIComponent(state)}\n          *Pincode*: ${encodeURIComponent(pincode)}\n          *Mobile Number*: ${encodeURIComponent(mobileNum)}\n          *Second Mobile Number*: ${encodeURIComponent(mobileNum1)}\n          *Order Delivery*: ${delivery === "1" ? "Cash On Delivery (+₹100 Extra)" : "Online Payment"}`;
+
+      const whatsappLink = `https://wa.me/+919712909546?text=${message}`;
+
+      window.open(whatsappLink, "_blank");
+  }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
